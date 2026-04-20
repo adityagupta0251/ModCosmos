@@ -3,6 +3,12 @@
   "module": "index.ts",
   "type": "module",
   "private": true,
+  "scripts": {
+    "build": "bun build ./index.ts --outdir ./dist --target bun",
+    "dev": "bun --watch index.ts",
+    "start": "bun index.ts",
+    "lint": "eslint ."
+  },
   "devDependencies": {
     "@types/bun": "latest",
     "eslint": "^10.2.1"

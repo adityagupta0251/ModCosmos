@@ -9,6 +9,11 @@ dist
 # code coverage
 coverage
 *.lcov
+.env
+.env*
+
+config.json
+
 
 # logs
 logs
