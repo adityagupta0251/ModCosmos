@@ -9,7 +9,7 @@
     "allowJs": true,
     "types": ["bun"],
 
-    "rootDir": "./src",
+    "rootDir": ".",
     "outDir": "./dist",
 
     // Bundler mode
