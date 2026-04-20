@@ -102,6 +102,23 @@ export async function handleTodoCommands(interaction: Interaction){
       await interaction.reply({embeds: [embed]});
 
     }
+
+    else if (subcommand === "remove") {
+      const taskNumber = interaction.options.getInteger("number");
+      if (taskNumber! < 1 || taskNumber! > userTodos.length) {
+        await interaction.reply("Invalid task number! Use `/todo list` to see your tasks.");
+        return;
+      }
+
+      const removedTask = userTodos.splice(taskNumber! - 1, 1);
+      
+      const embed = new EmbedBuilder()
+      .setColor(0xff0000)
+      .setTitle("🗑️ Task Removed")
+      .setDescription(`Removed: **${removedTask}**\n\nYou now have ${userTodos.length} task(s).`);
+
+      await interaction.reply({ embeds: [embed] });
+    }
   } 
 };
 
